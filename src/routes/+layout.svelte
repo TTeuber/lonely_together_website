@@ -1,6 +1,7 @@
 <script lang="ts">
     import Navbar from "$lib/Navbar.svelte";
     import {setContext} from "svelte";
+    import Footer from "$lib/Footer.svelte";
 
     let mainHue = "333";
     let mainSat = "20%";
@@ -12,14 +13,16 @@
 
 <Navbar/>
 
-<div style="--color: mainColor"></div>
+<!--<div style="&#45;&#45;color: mainColor"></div>-->
 
 <slot></slot>
 
+<Footer/>
+
 <style lang="sass">
     :global(html)
-      background: #333
-      color: #999
+      background: hsl(180, 30%, 60%)
+      color: black
       scroll-behavior: smooth
       font-family: sans-serif
 

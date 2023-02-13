@@ -3,8 +3,7 @@
     import Videos from "../lib/Videos.svelte";
     import Music from "$lib/Music.svelte";
     import Contact from "$lib/Contact.svelte";
-
-    let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+    import Footer from "$lib/Footer.svelte";
 
     let el: Element;
     let height;
@@ -33,13 +32,13 @@
 </script>
 <div>
     <div class="logo"></div>
-    <Music></Music>
+    <Music/>
     <div class="blueroom">
         <div class="background"></div>
         <div class="img-container"></div>
     </div>
     <Videos embedLinks={embedLinks}></Videos>
-    <Contact></Contact>
+    <Contact/>
 </div>
 
 <style lang="sass">

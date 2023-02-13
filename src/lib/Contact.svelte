@@ -20,12 +20,23 @@
       justify-content: center
 
     .wrapper
-      width: 70%
-      background: hsla(0,0,90%,10%)
+      width: 60%
+      background: hsla(0,0%,90%,10%)
       padding: 5rem
       border-radius: 30px
-      box-shadow: 1px 1px 5px hsla(0,0,30%,50%)
+      box-shadow: 1px 1px 5px hsla(0,0%,30%,50%)
 
+    @media screen and (max-width: 900px)
+      section
+        padding: 0
+      .wrapper
+        width: 100%
+        border-radius: 0
+
+    h2
+      font-size: 2rem
+      margin: 0 0 3rem
+      padding-inline: 0.2rem
 
     form
       display: grid
@@ -44,6 +55,10 @@
       border-bottom: 1px solid black
       height: 3rem
       font-size: 2rem
+      padding-inline: 5px
+
+      &::placeholder
+        color: #666
 
 
     .subject
@@ -55,11 +70,39 @@
       border: none
       border-bottom: 1px solid black
       font-size: 2rem
+      padding-inline: 5px
+
+      &::placeholder
+        color: #666
+
+
 
     button
-      border: none
-      background: none
+      border: 1px solid black
+      background: black
+      color: #ccc
       grid-column: span 2 / span 2
+      font-size: 2rem
+      cursor: pointer
 
+      &:hover
+        background: hsla(0,0%,20%,80%)
+
+    @media screen and (max-width: 800px)
+      .subject, textarea, button
+        grid-column: span 1 / span 1
+
+      input, textarea
+        font-size: 1.5rem
+
+    input, textarea
+      box-sizing: border-box
+      outline: none
+
+    input:hover, textarea:hover
+      border: 1px solid black
+
+    input:focus, textarea:focus
+      border: 1px solid black
 
 </style>

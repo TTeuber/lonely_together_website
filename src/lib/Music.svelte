@@ -27,16 +27,21 @@
 </script>
 
 <section>
+    <div class="buffer" id="music"></div>
     <div class="main">
         <h2>Music</h2>
         <div class="slider-container">
-            <button class="left" on:click={() => slider.scrollBy(-slider.scrollWidth / musicLinks.length, 0)} disabled={num === 0}>{"<"}</button>
+            <button class="left" on:click={() => slider.scrollBy(-slider.scrollWidth / musicLinks.length, 0)} disabled={num === 0}>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 2 20 20">
+                    <path fill-rule="evenodd" d="M7.72 12.53a.75.75 0 010-1.06l7.5-7.5a.75.75 0 111.06 1.06L9.31 12l6.97 6.97a.75.75 0 11-1.06 1.06l-7.5-7.5z" clip-rule="evenodd" />
+                </svg>
+            </button>
             <div class="slider" bind:this={slider}>
                 {#each musicLinks as link}
                     <div class="music">
                         <div class="frame">
                             <a href={link.link} style="display: contents" target="_blank" rel="noreferrer noopener">
-                                <img src={link.src} alt={link.title}>
+                                <img src={link.src} alt={link.title} class="album-cover">
                             </a>
                         </div>
                         <div class="title">
@@ -47,7 +52,11 @@
                     </div>
                 {/each}
             </div>
-            <button class="right" on:click={() => slider.scrollBy(slider.scrollWidth / musicLinks.length, 0)} disabled={num === musicLinks.length - 1}>{">"}</button>
+            <button class="right" on:click={() => slider.scrollBy(slider.scrollWidth / musicLinks.length, 0)} disabled={num === musicLinks.length - 1}>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="5 2 20 20" fill="currentColor" class="w-6 h-6">
+                    <path fill-rule="evenodd" d="M16.28 11.47a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 01-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 011.06-1.06l7.5 7.5z" clip-rule="evenodd" />
+                </svg>
+            </button>
         </div>
     </div>
     <div class="slider-markers">
@@ -61,6 +70,7 @@
 
 <style lang="sass">
     section
+      position: relative
       //background: hsl(180, 20%, 70%)
       //background-image: linear-gradient(hsl(180, 20%, 70%), hsl(0, 20%, 70%))
       background-image: linear-gradient(to bottom, hsl(0, 30%, 70%), hsl(280, 30%, 55%))
@@ -71,6 +81,10 @@
       padding:
         top: 20px
         bottom: 20px
+
+    .buffer
+      position: absolute
+      top: -3rem
 
 
     .main
@@ -100,12 +114,17 @@
       color: white
       font-size: 4rem
       bottom: 50%
-      padding: 10px
+      padding: 0
       z-index: 10
       display: none
 
-      &:disabled
-        color: #666
+      svg
+        width: 4rem
+        cursor: pointer
+
+      &:disabled svg
+        //fill: #666
+        opacity: 40%
         cursor: initial
 
       &.left
@@ -139,11 +158,11 @@
       width: 100%
       //aspect-ratio: 1
 
-    img
+    .album-cover
       width: 100%
       height: auto
       aspect-ratio: 1
-      box-shadow: 3px 3px 8px hsla(0,0,20%,50%)
+      box-shadow: 3px 3px 8px hsla(0,0%,20%,50%)
 
     h3
       text-align: center
@@ -194,7 +213,7 @@
         justify-content: center
         align-items: center
 
-        img
+        .album-cover
           width: 80%
           border-radius: 15px
 
@@ -216,6 +235,8 @@
 
 
     @media screen and (min-width: 1000px)
+      .main
+        margin-block: 60px
       .title
         width: 50%
       .music
