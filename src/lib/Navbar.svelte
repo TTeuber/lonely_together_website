@@ -118,7 +118,7 @@
     a
       text-decoration: none
       height: 100%
-      display: contents
+      display: flex
       align-items: center
       color: black
 
