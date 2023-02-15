@@ -13,7 +13,7 @@
 
 <style lang="sass">
     section
-      background-image: linear-gradient(hsl(120, 20%, 60%), hsl(180, 30%, 60%))
+      background-image: linear-gradient(var(--green), var(--blue))
       color: black
       padding: 1rem
       display: flex
@@ -32,6 +32,12 @@
       .wrapper
         width: 100%
         border-radius: 0
+        padding: 0
+
+        h2
+          padding: 1rem
+        form
+          padding: 1rem
 
     h2
       font-size: 2rem
@@ -46,7 +52,7 @@
 
     @media screen and (max-width: 800px)
       form
-        grid-template-columns: 1fr
+        grid-template-columns: 100%
         grid-template-rows: repeat(3, minmax(0, 1fr)) 3fr 1fr
 
     input

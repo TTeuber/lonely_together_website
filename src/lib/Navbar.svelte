@@ -1,5 +1,7 @@
 <script lang="ts">
-    import {beforeUpdate, getContext, onMount} from "svelte";
+    import {getContext, onMount, setContext} from "svelte";
+    import MobileNavMenu from "$lib/MobileNavMenu.svelte";
+    import {writable} from "svelte/store";
 
     let colors = getContext("mainColors");
     let color = getContext("mainColor");
@@ -52,69 +54,64 @@
     $: navOpacity = getNavOpacity(height);
     $: logoSize = getLogoSize(height);
 
-
-    let isMobile = false
-    onMount(() => {
-      isMobile = (window.innerWidth <= 640 || window.innerHeight <= 640);
-    })
-
+    let showMobNav = writable(false);
 
 </script>
 
 <div class="buffer" style="--height: {navHeight}"></div>
 <nav style="--color: {color}; --nav-height: {navHeight}; --logo-size: {logoSize}; --opacity: {navOpacity}">
     <div class="nav-background" style="--nav-height: {navHeight};"></div>
-    <ul style>
-        {#if isMobile}
-            <li>
-                hamburger
-            </li>
-        {:else}
+        <div class="hamburger" on:click={() => {showMobNav.update(n => !n); console.log("test")}}>
+            {#if !$showMobNav}
+                <img src="/svgs/hamburger.svg" alt="hamburger menu">
+            {:else}
+                <img src="/svgs/x.svg" alt="x">
+            {/if}
+        </div>
+        <ul class="pages">
             <li><a href="/#music">Music</a></li>
             <li><a href="/#videos">Videos</a></li>
-            <li><a href="/lt/shop">Shop</a></li>
+            <li class="top-shop"><a href="/lt/shop">Shop</a></li>
             <li class="more">
                 More
                 <div>
                     <ul>
-                        <li><a href="/lt/press">Press</a></li>
+                        <li class="drop-shop"><a href="/lt/shop" >Shop</a></li>
+<!--                        <li><a href="/lt/press">Press</a></li>-->
                         <li><a href="/lt/services">Services</a></li>
                         <li><a href="/lt/about">About</a></li>
                     </ul>
                 </div>
             </li>
-<!--            <li>Press</li>-->
-<!--            <li>Services</li>-->
-<!--            <li><a href="/about">About</a></li>-->
-        {/if}
-    </ul>
+        </ul>
     <div class="logo-container">
         <a href="/" style="display: contents">
             <img src="/navtitle.png" alt="Lonely Together Logo" class="nav-logo">
         </a>
     </div>
-    <ul class="socials">
-        <li><a href="https://open.spotify.com/artist/4u5WYjo12NK2Qt9pv2LtEV?si=cBk-JBK-R4CXL51lOwTfzg"><img src="/socials/spotify.png" alt="spotify"></a></li>
-        <li><a href="https://music.apple.com/us/artist/lonely-together/1399414250"><img src="/socials/apple.png" alt="apple"></a></li>
-        <li><a href="https://www.youtube.com/channel/UCCeGeB45MdDlU7y1CO1KJGg"><img src="/socials/youtube.png" alt="youtube"></a></li>
-<!--        <li><a href="https://www.tiktok.com/@lonelytogethermusic?is_from_webapp=1&sender_device=pc"><img src="/socials/tiktok.png" alt="tiktok"></a></li>-->
-        <li><a href="https://www.instagram.com/lonelytogethermusic/"><img src="/socials/instagram.png" alt="instagram"></a></li>
-        <li><a href="https://twitter.com/lonely2gether_"><img src="/socials/twitter.png" alt="twitter"></a></li>
-        <li><a href="https://www.facebook.com/Lonely-Together-941835562667436/"><img src="/socials/facebook.png" alt="facebook"></a></li>
-<!--        <li><a href="https://soundcloud.com/lonelytogethermusic"><img src="/socials/soundcloud.png" alt="soundcloud"></a></li>-->
-    </ul>
+        <ul class="socials">
+            <li><a href="https://open.spotify.com/artist/4u5WYjo12NK2Qt9pv2LtEV?si=cBk-JBK-R4CXL51lOwTfzg"><img src="/socials/spotify.png" alt="spotify"></a></li>
+            <li><a href="https://music.apple.com/us/artist/lonely-together/1399414250"><img src="/socials/apple.png" alt="apple"></a></li>
+            <li><a href="https://www.youtube.com/channel/UCCeGeB45MdDlU7y1CO1KJGg"><img src="/socials/youtube.png" alt="youtube"></a></li>
+    <!--        <li><a href="https://www.tiktok.com/@lonelytogethermusic?is_from_webapp=1&sender_device=pc"><img src="/socials/tiktok.png" alt="tiktok"></a></li>-->
+            <li><a href="https://www.instagram.com/lonelytogethermusic/"><img src="/socials/instagram.png" alt="instagram"></a></li>
+            <li><a href="https://twitter.com/lonely2gether_"><img src="/socials/twitter.png" alt="twitter"></a></li>
+            <li><a href="https://www.facebook.com/Lonely-Together-941835562667436/"><img src="/socials/facebook.png" alt="facebook"></a></li>
+    <!--        <li><a href="https://soundcloud.com/lonelytogethermusic"><img src="/socials/soundcloud.png" alt="soundcloud"></a></li>-->
+        </ul>
 </nav>
-<div class="mob-nav">
-    <ul>
-        <li><a href="#music"><p>Music</p></a></li>
-        <li>Press</li>
-        <li>Services</li>
-        <li>Shop</li>
-        <li><a href="/about">About</a></li>
-    </ul>
-</div>
+{#if $showMobNav}
+    <MobileNavMenu showMobNav={showMobNav}/>
+{/if}
 
 <style lang="sass">
+    .hamburger
+      display: none
+      position: absolute
+      left: 20px
+      cursor: pointer
+      img
+        width: 40px
     a
       text-decoration: none
       height: 100%
@@ -143,13 +140,24 @@
     .mob-nav
       position: fixed
       inset: 0
-      background-image: linear-gradient(pink, darken(cyan, 20%))
+      background: linear-gradient(var(--pink), var(--blue))
       z-index: 50
       display: none
 
       ul
         display: flex
         flex-direction: column
+
+    .drop-shop
+      display: none
+
+    @media screen and (max-width: 900px)
+      .top-shop
+        display: none
+
+      .drop-shop
+        display: inline
+
 
     @media screen and (max-width: 800px)
       .buffer
@@ -158,19 +166,19 @@
       nav
         height: 4rem
 
+
     .nav-logo
       height: 80%
+      filter: hue-rotate(30deg)
 
     .nav-background
-      //background: var(--color)
-      background-image: linear-gradient(to bottom, var(--color), hsl(180, 30%, 60%))
+      background-image: linear-gradient(to bottom, var(--pink), var(--blue))
       position: absolute
       width: 100%
       height: var(--nav-height)
       z-index: -1
       left: 0
       top: 0
-      //opacity: var(--opacity)
 
     @media screen and (max-width: 800px)
       .nav-background
@@ -197,9 +205,6 @@
 
     li:hover
       cursor: pointer
-      //background: hsl(180, 20%, 60%)
-      //backdrop-filter: hue-rotate(180deg)
-      //opacity: var(--opacity)
 
       a
         color: #666
@@ -212,38 +217,41 @@
       height: 100%
       padding: 0
 
+    @media screen and (max-width: 800px)
+      .logo-container
+        flex-grow: 0.6
+
     .socials
       img
         filter: invert(100%)
         width: 2rem
 
-      //@media screen and (max-width: 1000px)
-      //  img
-      //    width: 2rem
 
       li:hover
         img
-          //filter: invert(70%)
           opacity: 70%
 
     .more
+      position: relative
       div
         position: absolute
-        width: 100vw
-        height: var(--nav-height)
-        max-height: 4rem
-        //background: linear-gradient(to top, var(--color), hsl(180,30%, 60%))
-        background: hsla(180,30%,80%,50%)
+        background: linear-gradient(var(--blue), hsla(180, 30%, 80%, 50%))
         top: 100%
-        left: 0
-        //display: none
-        transform: translateY(-100%)
-        transition: transform ease-out 200ms
+        transform: translateY(-200%)
+        transition: transform ease-out 250ms
         z-index: -10
+
+        ul
+          width: 100%
+          display: flex
+          flex-direction: column
+          align-items: start
+          gap: 1rem
+          //margin-block: 1rem
+          padding: 1rem
 
       &:hover
         div
-          //display: flex
           transform: translateY(0%)
 
           a
@@ -253,8 +261,15 @@
           li
             color: black
 
-            &:hover
+            a:hover
               color: #666
 
+   @media screen and (max-width: 700px)
+     .hamburger
+       display: inline
+     .pages
+       display: none
+     .socials
+        display: none
 
 </style>

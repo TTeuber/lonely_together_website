@@ -1,12 +1,9 @@
 <section>
     <h1>Shop</h1>
-    <video src="/merch.mov" controls class="video-container"></video>
+    <video src="/merch.mp4" controls class="video-container"></video>
     <p>Lonely Together Collaborated with Illustrator/Graphic Artist BxPacific to bring fans the 'Coping Mechanisms' merch line inspired by the band's new EP. To place an order, click the link below or visit www.bxpacific.com/shop. Thanks for supporting local artists!</p>
-    <a href="http://www.bxpacific.com/shop">View Merchandise</a>
+    <a href="http://www.bxpacific.com/shop" target="_blank" rel="noreferrer noopener">View Merchandise</a>
 </section>
-<div>
-    Carousel
-</div>
 
 <style lang="sass">
     section
@@ -44,7 +41,7 @@
     h1
       font-size: 4rem
       margin: 0
-      color: pink
+      color: var(--pink)
       text-shadow: 1px 1px 2px #333
 
     @media screen and (max-width: 800px)

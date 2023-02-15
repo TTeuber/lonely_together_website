@@ -60,7 +60,7 @@
       position: relative
       //background: hsl(180, 20%, 70%)
       //background-image: linear-gradient(hsl(180, 20%, 70%), hsl(0, 20%, 70%))
-      background-image: linear-gradient(to top, hsl(120, 20%, 60%), hsl(280, 30%, 60%))
+      background-image: linear-gradient(to top, var(--green), var(--purple))
       //border: 10px solid
       //border-image: linear-gradient(hsl(180, 20%, 70%), hsl(0, 20%, 70%))
       color: black

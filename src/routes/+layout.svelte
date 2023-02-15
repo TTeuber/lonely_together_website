@@ -1,19 +1,9 @@
 <script lang="ts">
     import Navbar from "$lib/Navbar.svelte";
-    import {setContext} from "svelte";
     import Footer from "$lib/Footer.svelte";
-
-    let mainHue = "333";
-    let mainSat = "20%";
-    let mainLum = "20%";
-    let mainColor = "hsl(0, 50%, 85%)"
-    setContext("mainColors", {hue: mainHue, sat: mainSat, lum: mainLum});
-    setContext("mainColor", mainColor);
 </script>
 
 <Navbar/>
-
-<!--<div style="&#45;&#45;color: mainColor"></div>-->
 
 <slot></slot>
 
@@ -21,15 +11,14 @@
 
 <style lang="sass">
     :global(html)
-      background: hsl(180, 30%, 60%)
+      --pink: hsl(0, 30%, 80%)
+      --blue: hsl(180, 30%, 60%)
+      --green: hsl(120, 20%, 60%)
+      --purple: hsl(280, 30%, 55%)
+      background: var(--blue)
       color: black
       scroll-behavior: smooth
       font-family: sans-serif
-
-    @media(prefers-color-scheme: light)
-      :global(html)
-        background: #999
-        color: #333
 
     :global(body)
       margin: 0
@@ -39,6 +28,5 @@
     div
       height: 10rem
       width: 100vw
-      background: var(--color)
-
+      background: var(--pink)
 </style>

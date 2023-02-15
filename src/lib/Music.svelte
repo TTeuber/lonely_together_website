@@ -73,7 +73,7 @@
       position: relative
       //background: hsl(180, 20%, 70%)
       //background-image: linear-gradient(hsl(180, 20%, 70%), hsl(0, 20%, 70%))
-      background-image: linear-gradient(to bottom, hsl(0, 30%, 70%), hsl(280, 30%, 55%))
+      background-image: linear-gradient(to bottom, var(--pink), var(--purple))
       //border: 10px solid
       //border-image: linear-gradient(hsl(180, 20%, 70%), hsl(0, 20%, 70%))
       color: black

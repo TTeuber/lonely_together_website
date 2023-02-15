@@ -55,13 +55,15 @@
 
     .services
       background: #333
-      width: 800px
+      width: 50%
+      //min-width: 700px
       display: grid
       place-items: center
       //flex-grow: 1
 
       .items
         width: 600px
+        //min-width: 600px
         padding: 0
         margin: auto
         display: grid
@@ -71,7 +73,7 @@
 
       h1
         font-size: 3rem
-        color: pink
+        color: var(--pink)
 
       h2
         color: #ccc
@@ -80,7 +82,7 @@
       h3
         font-size: 1.5rem
         margin: 0
-        color: pink
+        color: var(--pink)
 
       p
         color: #ccc
@@ -103,7 +105,7 @@
         left: 50%
         padding: 1rem
         transform: translateX(-50%) translateY(-100%)
-        color: pink
+        color: var(--pink)
         font-size: 7rem
         //background: hsla(0,0%,30%,50%)
         border-radius: 20px

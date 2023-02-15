@@ -3,7 +3,6 @@
     import Videos from "../lib/Videos.svelte";
     import Music from "$lib/Music.svelte";
     import Contact from "$lib/Contact.svelte";
-    import Footer from "$lib/Footer.svelte";
 
     let el: Element;
     let height;
@@ -24,12 +23,8 @@
         {src: "https://www.youtube.com/embed/DNkuxnXFKgo", title: "Haunted"},
         {src: "https://www.youtube.com/embed/zDNKJ3npFqM", title: "Can't Believe It"}
     ]
-
-    let container: HTMLElement;
-
-
-
 </script>
+
 <div>
     <div class="logo"></div>
     <Music/>

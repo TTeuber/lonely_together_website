@@ -69,10 +69,10 @@
     h1
       margin: 0
       font-size: 3rem
-      color: lightblue
+      color: var(--blue)
 
     h2
-      color: pink
+      color: var(--pink)
       font-size: 2rem
 
     p

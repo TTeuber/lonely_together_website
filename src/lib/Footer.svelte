@@ -26,7 +26,8 @@
       justify-content: center
       color: black
       position: relative
-      background-image: linear-gradient(hsl(180,30%,60%), hsl(0,20%,70%))
+      background-image: linear-gradient(var(--blue), var(--pink))
+      padding-top: 4rem
 
     h3
       font-size: clamp(2rem, 3vw, 3rem)
@@ -48,6 +49,11 @@
       align-items: center
       min-width: 300px
       width: 50%
+
+    @media screen and (max-width: 400px)
+      form
+        width: 100%
+        min-width: 0
 
     input
       background: none
