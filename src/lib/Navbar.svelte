@@ -172,7 +172,8 @@
       filter: hue-rotate(30deg)
 
     .nav-background
-      background-image: linear-gradient(to bottom, var(--pink), var(--blue))
+      background-image: linear-gradient(to bottom, var(--pink), var(--blue-80))
+      backdrop-filter: blur(5px)
       position: absolute
       width: 100%
       height: var(--nav-height)
@@ -235,10 +236,11 @@
       position: relative
       div
         position: absolute
-        background: linear-gradient(var(--blue), hsla(180, 30%, 80%, 50%))
+        background: linear-gradient(var(--blue-80), var(--blue-50))
+        backdrop-filter: blur(5px)
         top: 100%
-        transform: translateY(-200%)
-        transition: transform ease-out 250ms
+        transform: translateY(-300%)
+        transition: transform ease-out 300ms
         z-index: -10
 
         ul

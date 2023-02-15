@@ -73,6 +73,7 @@
 
     h2
       color: var(--pink)
+      font-family: 'Comfortaa', sans-serif
       font-size: 2rem
 
     p
