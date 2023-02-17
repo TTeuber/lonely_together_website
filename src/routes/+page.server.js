@@ -16,7 +16,7 @@ export const actions = {
             subject: subject,
             text: `name: ${name}\n email: ${email}\n ${description}`,
         }
-        sgMail
+        await sgMail
             .send(msg)
             .then(() => {
                 console.log('Email sent')
