@@ -20,12 +20,12 @@ export const actions = {
         await sgMail
             .send(msg)
             .then(() => {
-                console.log('Email sent')
+                console.log("email sent")
+                return {success: true}
             })
             .catch((error) => {
-                console.error(error)
+                console.log(error)
+                return {success: false}
             })
-
-        return {success: true}
     }
 }
