@@ -1,11 +1,11 @@
 <section>
     <div class="wrapper">
         <h2>Contact Us</h2>
-        <form action="post">
-            <input type="text" placeholder="Name" class="name">
-            <input type="email" placeholder="Email" class="email" required>
-            <input type="text" placeholder="Subject" class="subject">
-            <textarea placeholder="Type your message here..."></textarea>
+        <form method="post">
+            <input type="text" name="name" placeholder="Name" class="name">
+            <input type="email" name ="email" placeholder="Email" class="email" required>
+            <input type="text" name="subject" placeholder="Subject" class="subject">
+            <textarea name="description" placeholder="Type your message here..."></textarea>
             <button type="submit">Submit</button>
         </form>
     </div>

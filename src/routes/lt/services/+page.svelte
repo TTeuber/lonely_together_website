@@ -35,12 +35,12 @@
     <h2>Contact Us</h2>
     <p>We'd love to be a part of your next audio production. Get in touch with us today and we will respond within 24 hours.</p>
     <p>lonelytogethermusic@gmail.com</p>
-    <form action="post">
-        <input type="text" placeholder="Name">
-        <input type="email" placeholder="Email">
-        <input type="tel" placeholder="Phone">
-        <input type="text" placeholder="Service(s) you are interested in">
-        <textarea placeholder="Anything else you want us to know..."></textarea>
+    <form method="post">
+        <input type="text" name="name" placeholder="Name">
+        <input type="email" name="email" placeholder="Email">
+        <input type="tel" name="phone" placeholder="Phone">
+        <input type="text" name="services" placeholder="Service(s) you are interested in">
+        <textarea name="description" placeholder="Anything else you want us to know..."></textarea>
         <button type="submit">Submit</button>
     </form>
 </div>

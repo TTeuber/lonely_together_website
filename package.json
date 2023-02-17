@@ -26,6 +26,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@sendgrid/mail": "^7.7.0",
 		"node-sass": "^8.0.0",
 		"svelte-preprocess": "^5.0.0"
 	}

@@ -27,7 +27,7 @@
       inset: 0
       scroll-behavior: smooth
 
-    :global(a, li, p, button, input, text-area)
+    :global(a, li, p, button, input, text-area, text-area::placeholder)
       font-family: 'Comfortaa', sans-serif
 
     div
