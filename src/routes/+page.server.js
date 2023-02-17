@@ -1,5 +1,5 @@
 import sgMail from '@sendgrid/mail'
-import {SENDGRID_API_KEY} from '$env/static/private'
+import {VITE_SENDGRID_API_KEY} from '$env/static/private'
 
 export const actions = {
     default: async ({request}) => {
@@ -9,8 +9,7 @@ export const actions = {
         const subject = data.get('subject')
         const description = data.get('description')
 
-
-        sgMail.setApiKey(SENDGRID_API_KEY)
+        sgMail.setApiKey(VITE_SENDGRID_API_KEY)
         const msg = {
             to: 'tyler.teuber@gmail.com', // Change to your recipient
             from: 'tyler.teuber@me.com', // Change to your verified sender
