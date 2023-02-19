@@ -11,8 +11,8 @@ export const actions = {
 
         sgMail.setApiKey(VITE_SENDGRID_API_KEY)
         const msg = {
-            to: 'tyler.teuber@gmail.com', // Change to your recipient
-            from: 'tyler.teuber@me.com', // Change to your verified sender
+            to: 'lonelytogethermusic@gmail.com',
+            from: 'tyler.teuber@me.com',
             subject: subject,
             text: `name: ${name}\n email: ${email}\n ${description}`,
         }
