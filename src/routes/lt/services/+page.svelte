@@ -78,6 +78,7 @@
       h2
         color: #ccc
         font-size: 2rem
+        font-family: 'Comfortaa', sans-serif
 
       h3
         font-size: 1.5rem
@@ -106,7 +107,7 @@
         padding: 1rem
         transform: translateX(-50%) translateY(-100%)
         color: var(--pink)
-        font-size: 7rem
+        font-size: min(25vw, 7rem)
         //background: hsla(0,0%,30%,50%)
         border-radius: 20px
         //box-shadow: 1px 1px 5px #333

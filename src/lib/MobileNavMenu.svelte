@@ -37,6 +37,14 @@
 </div>
 
 <style lang="sass">
+    //*
+    //  outline: 1px solid black
+    .container
+      display: flex
+      justify-content: center
+      flex-direction: column
+      align-items: center
+
     .nav-container
       width: 50%
       margin: auto
@@ -58,19 +66,25 @@
       list-style: none
     .buffer
       height: 4rem
-      width: 100%
+      //width: 100%
     .background
       background: linear-gradient(var(--blue), var(--purple), var(--green))
       position: fixed
       inset: 0
-      height: 100vh
+      height: 105vh
       z-index: 55
 
       .pages
-        text-align: center
+        //text-align: center
+        padding: 0
+        display: flex
+        flex-direction: column
+        align-items: center
+        justify-content: center
         font-size: 7vh
 
       .socials
+        padding: 0
         display: flex
         justify-content: center
 
