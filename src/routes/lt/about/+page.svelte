@@ -7,10 +7,10 @@
             Bringing the Lonely Together through music
         </h1>
         <h2>
-            About 5,000 Monthly Listeners on Spotify | 100,000+ Streams on Spotify | 1,400 Followers on IG & 2,000 on Tik-Tok.
+            About 1,000 Monthly Listeners on Spotify | 147,000+ Streams on Spotify | 1,000 Followers on IG & 2,200 on Tik-Tok.
         </h2>
         <h2>
-            Featured on KING 5 Evening Magazine, KUBE 93.3, Respect My Region, The Seattleite & more.
+            Featured on KING 5 Evening Magazine, opened for B.o.B, KUBE 93.3, Respect My Region, The Seattleite & more.
         </h2>
         <p>
             Lonely Together is a Pop/R&B duo based in Bellingham, Washington, that reaches listeners with their catchy melodies, genre-blending sound & all-inclusive message. Recommended for fans of artists like Trevor Daniel, Justin Bieber, and Blackbear. SAFE TRVLS, is the lead vocalist & producer/engineer of the duo, and Rosie is a Keyboardist, songwriter & vocalist. When performing live, they have an electric guitar player to accompany them.
@@ -22,8 +22,6 @@
 </section>
 
 <style lang="sass">
-    *
-      //outline: 1px solid white
     section
       isolation: isolate
       position: relative
