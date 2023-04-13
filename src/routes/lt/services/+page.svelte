@@ -12,9 +12,8 @@
         <div class="items">
             <div>
                 <h3>Music Production</h3>
-
-                <p>View beats for sale on <a href="https://www.beatstars.com/lonelytogether" style="color: #ccc" target="_blank" rel="noreferrer noopener">BeatStars</a></p>
-                <p>Customized beats starting at $125</p>
+                <p>View beats for sale <br>on <a href="https://www.beatstars.com/lonelytogether" style="color: #ccc" target="_blank" rel="noreferrer noopener">BeatStars</a></p>
+                <p>Customized beats starting <br>at $125</p>
             </div>
             <div>
                 <h3>
@@ -58,6 +57,7 @@
     .services
       background: #333
       width: 50%
+      padding: 20px
       //min-width: 700px
       display: grid
       place-items: center
