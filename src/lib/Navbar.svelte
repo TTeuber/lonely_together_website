@@ -71,14 +71,13 @@
         <ul class="pages">
             <li><a href="/#music">Music</a></li>
             <li><a href="/#videos">Videos</a></li>
-            <li class="top-shop"><a href="/lt/shop">Shop</a></li>
+            <li class="top-shop"><a href="/lt/services">Services</a></li>
             <li class="more">
                 More
                 <div>
                     <ul>
                         <li class="drop-shop"><a href="/lt/shop" >Shop</a></li>
-<!--                        <li><a href="/lt/press">Press</a></li>-->
-                        <li><a href="/lt/services">Services</a></li>
+                        <li><a href="/lt/shop">Shop</a></li>
                         <li><a href="/lt/about">About</a></li>
                     </ul>
                 </div>

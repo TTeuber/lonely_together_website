@@ -12,13 +12,15 @@
         <div class="items">
             <div>
                 <h3>Music Production</h3>
-                <p>Starts at $50/song</p>
+
+                <p>View beats for sale on <a href="https://www.beatstars.com/lonelytogether" style="color: #ccc" target="_blank" rel="noreferrer noopener">BeatStars</a></p>
+                <p>Customized beats starting at $125</p>
             </div>
             <div>
                 <h3>
                     Mixing
                 </h3>
-                <p>$40 per hour</p>
+                <p>$50 per hour</p>
             </div>
             <div>
                 <h3>Vocal Recording</h3>
